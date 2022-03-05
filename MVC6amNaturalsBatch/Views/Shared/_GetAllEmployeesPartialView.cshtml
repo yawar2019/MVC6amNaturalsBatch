@@ -1,0 +1,22 @@
+﻿@model List<MVC6amNaturalsBatch.Models.EmployeeModel>
+@{
+    ViewBag.Title = "GetEmployee6";
+}
+
+<h2>GetEmployee</h2>
+
+<table class="table table-bordered table-condensed table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+    </tr>
+    @foreach (var item in Model)//3
+    {
+        <tr>
+            <td>@item.EmpId</td>
+            <td>@item.EmpName</td>
+            <td>@item.EmpSalary</td>
+        </tr>
+    }
+</table>

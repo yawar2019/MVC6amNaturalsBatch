@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "GetEmployee3";
+}
+
+<h2>GetEmployee3</h2>
+
+<table class="table table-bordered table-condensed table-responsive table-striped">
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>EmpSalary</th>
+    </tr>
+
+
+    @foreach (var item in ViewBag.Employees)
+    {
+        <tr>
+            <td>@item.EmpId</td>
+            <td>@item.EmpName</td>
+            <td>@item.EmpSalary</td>
+        </tr>
+    }
+</table>
