@@ -21,10 +21,10 @@ namespace MVC6amNaturalsBatch.Controllers
             return "Hello World2";
         }
 
-        public string Index3(int id,string name,string designation)
+        public string Index3(int id, string name, string designation)
         {
-            
-            return "My Id is "+id+" and Name is "+name+" and designation is "+designation;
+
+            return "My Id is " + id + " and Name is " + name + " and designation is " + designation;
         }
 
 
@@ -40,12 +40,12 @@ namespace MVC6amNaturalsBatch.Controllers
         [Route("jungle/Monkey/{number}")]
         public string Index4(int? number)
         {
-            return "Hello World "+number;
+            return "Hello World " + number;
         }
 
         public ActionResult GetEmployee()
         {
-           
+
             ViewBag.name = "James";
             return View();
         }
@@ -58,7 +58,7 @@ namespace MVC6amNaturalsBatch.Controllers
             emp.EmpSalary = 210000;
 
             ViewBag.emp = emp;
-            
+
             return View();
         }
 
@@ -88,7 +88,7 @@ namespace MVC6amNaturalsBatch.Controllers
 
 
             ViewBag.Employees = listEmp;
-            
+
 
             return View();
         }
@@ -100,7 +100,7 @@ namespace MVC6amNaturalsBatch.Controllers
             emp.EmpName = "naveena";
             emp.EmpSalary = 210000;
 
-           
+
             //object model=emp
             return View(emp);
         }
@@ -129,7 +129,7 @@ namespace MVC6amNaturalsBatch.Controllers
             listEmp.Add(emp);
             listEmp.Add(emp1);
             listEmp.Add(emp2);
-            
+
             return View(listEmp);
         }
 
@@ -220,5 +220,73 @@ namespace MVC6amNaturalsBatch.Controllers
             return View(listEmp);
         }
 
+        public PartialViewResult GetPartialView3()
+        {
+            List<EmployeeModel> listEmp = new List<EmployeeModel>();
+
+
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpId = 1;
+            emp.EmpName = "James";
+            emp.EmpSalary = 210000;
+
+            EmployeeModel emp1 = new EmployeeModel();
+            emp1.EmpId = 2;
+            emp1.EmpName = "Alicia";
+            emp1.EmpSalary = 310000;
+
+            EmployeeModel emp2 = new EmployeeModel();
+            emp2.EmpId = 3;
+            emp2.EmpName = "Jessica";
+            emp2.EmpSalary = 410000;
+
+            listEmp.Add(emp);
+            listEmp.Add(emp1);
+            listEmp.Add(emp2);
+
+            return PartialView("_GetAllEmployeesPartialView", listEmp);
+        }
+
+        public JsonResult GetJEmployeeJsonData()
+        {
+            List<EmployeeModel> listEmp = new List<EmployeeModel>();
+
+
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpId = 1;
+            emp.EmpName = "James";
+            emp.EmpSalary = 210000;
+
+            EmployeeModel emp1 = new EmployeeModel();
+            emp1.EmpId = 2;
+            emp1.EmpName = "Alicia";
+            emp1.EmpSalary = 310000;
+
+            EmployeeModel emp2 = new EmployeeModel();
+            emp2.EmpId = 3;
+            emp2.EmpName = "Jessica";
+            emp2.EmpSalary = 410000;
+
+            listEmp.Add(emp);
+            listEmp.Add(emp1);
+            listEmp.Add(emp2);
+
+
+            return Json(listEmp, JsonRequestBehavior.AllowGet);//javascript object notation 
+        }
+
+        public ViewResult AccessEmployeeJsonData()
+        {
+            return View();
+        }
+
+        public FileResult GetMeFile()
+        {
+            return File("~/Web.config","text", "Web.config");
+        }
+        public FileResult GetMeFile2()
+        {
+            return File("~/Web.config", "application/xml");
+        }
     }
 }
