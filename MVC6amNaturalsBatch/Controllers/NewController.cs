@@ -10,7 +10,7 @@ namespace MVC6amNaturalsBatch.Controllers
     public class NewController : Controller
     {
         // GET: New
-        public string Index()
+        public string Index(int? id)
         {
             string a = Index2();
             return a;
@@ -287,6 +287,33 @@ namespace MVC6amNaturalsBatch.Controllers
         public FileResult GetMeFile2()
         {
             return File("~/Web.config", "application/xml");
+        }
+
+        public ContentResult getContent(int? id)
+        {
+            if (id == 1)
+            {
+                return Content("Hello World");
+
+            }
+            else if (id == 2)
+            {
+                return Content("<p style='color:red;'>Hello World</p>");
+            }
+            else
+            {
+                return Content("<script>alert('Hello World')</script>");
+            }
+        }
+
+        public RedirectToRouteResult getRoute()
+        {
+            return RedirectToRoute("asdfasdf");
+        }
+
+        public RedirectToRouteResult getRoute2()
+        {
+            return RedirectToAction("index","new",new {id=2 });
         }
     }
 }
