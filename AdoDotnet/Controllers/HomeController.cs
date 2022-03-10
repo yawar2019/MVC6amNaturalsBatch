@@ -21,9 +21,36 @@ namespace AdoDotnet.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(string EmpName,int EmpSalary)
+        public ActionResult Create(EmployeeModel emp)
         {
-            return View();
+            int Result = db.SaveEmployee(emp);
+            if (Result > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+        public ActionResult Edit(int? id)
+        {
+            EmployeeModel emp = db.GetAllEmployeeById(id);
+            return View(emp);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EmployeeModel emp)
+        {
+            int Result = db.UpdateEmployee(emp);
+            if (Result > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

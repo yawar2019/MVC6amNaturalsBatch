@@ -32,5 +32,76 @@ namespace AdoDotnet.Models
 
             return listEmp;
         }
+
+        public int SaveEmployee(EmployeeModel emp)
+        {
+            SqlCommand cmd = new SqlCommand("sp_CreateEmployee", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@EmpName", emp.EmpName);
+            cmd.Parameters.AddWithValue("@EmpSalary", emp.EmpSalary);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+
+            if (i > 0)
+            {
+                return i;
+            }
+            else
+            {
+                con.Close();
+
+                return 0;
+            }
+        }
+
+        public EmployeeModel GetAllEmployeeById(int? id)
+        {
+            SqlCommand cmd = new SqlCommand("usp_getEmployeesById", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@EmpId", id);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            EmployeeModel emp = new EmployeeModel();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+
+
+                emp.EmpId = Convert.ToInt32(dr[0]);
+                emp.EmpName = Convert.ToString(dr[1]);
+                emp.EmpSalary = Convert.ToInt32(dr[2]);
+
+            }
+
+            return emp;
+        }
+
+        public int UpdateEmployee(EmployeeModel emp)
+        {
+            SqlCommand cmd = new SqlCommand("spr_updateEmployeeDetails", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@EmpId", emp.EmpId);
+            cmd.Parameters.AddWithValue("@EmpName", emp.EmpName);
+            cmd.Parameters.AddWithValue("@EmpSalary", emp.EmpSalary);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+
+            if (i > 0)
+            {
+                return i;
+            }
+            else
+            {
+                con.Close();
+
+                return 0;
+            }
+        }
+
+        
     }
-    }
+}

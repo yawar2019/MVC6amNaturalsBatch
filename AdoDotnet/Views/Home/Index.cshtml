@@ -9,6 +9,7 @@
         <th>Id</th>
         <th>Name</th>
         <th>Salary</th>
+        <th>Action</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -16,6 +17,9 @@
             <td>@item.EmpId</td>
             <td>@item.EmpName</td>
             <td>@item.EmpSalary</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id=@item.EmpId })
+            </td>
         </tr>
     }
 </table>

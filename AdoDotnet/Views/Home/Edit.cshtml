@@ -1,0 +1,15 @@
+﻿@model AdoDotnet.Models.EmployeeModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form action="~/Home/Edit" method="post">
+    <input type="hidden" name="EmpId" value="@Model.EmpId" />
+    <label>EmpName</label>
+    <input type="text" name="EmpName" class="form-control" value="@Model.EmpName" /><br>
+    <label>EmpSalary</label>
+    <input type="text" name="EmpSalary" class="form-control" value="@Model.EmpSalary" /><br>
+    <input type="submit" value="Save" class="btn btn-success" />
+</form>
