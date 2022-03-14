@@ -52,5 +52,27 @@ namespace AdoDotnet.Controllers
                 return View();
             }
         }
+
+        public ActionResult Delete(int? id)
+        {
+            EmployeeModel emp = db.GetAllEmployeeById(id);
+            return View(emp);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            int Result = db.DeleteEmployee(id);
+            if (Result > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+
     }
 }

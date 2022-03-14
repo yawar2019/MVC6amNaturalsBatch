@@ -102,6 +102,28 @@ namespace AdoDotnet.Models
             }
         }
 
+
+        public int DeleteEmployee(int? id)
+        {
+            SqlCommand cmd = new SqlCommand("sp_DeleteNeerjaEmployees", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@EmpId", id);
+             
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+
+            if (i > 0)
+            {
+                return i;
+            }
+            else
+            {
+                con.Close();
+
+                return 0;
+            }
+        }
         
     }
 }
