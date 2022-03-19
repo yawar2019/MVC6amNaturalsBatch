@@ -12,6 +12,8 @@ namespace databaseFirstApproach.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class EmployeeEntities : DbContext
     {
@@ -26,5 +28,28 @@ namespace databaseFirstApproach.Models
         }
     
         public virtual DbSet<employeeDetail> employeeDetails { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
+    
+        public virtual ObjectResult<sp_employee_Result> sp_employee()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_employee_Result>("sp_employee");
+        }
+    
+        public virtual int sp_CreateEmployee(string empName, Nullable<int> empSalary, Nullable<int> deptId)
+        {
+            var empNameParameter = empName != null ?
+                new ObjectParameter("EmpName", empName) :
+                new ObjectParameter("EmpName", typeof(string));
+    
+            var empSalaryParameter = empSalary.HasValue ?
+                new ObjectParameter("EmpSalary", empSalary) :
+                new ObjectParameter("EmpSalary", typeof(int));
+    
+            var deptIdParameter = deptId.HasValue ?
+                new ObjectParameter("DeptId", deptId) :
+                new ObjectParameter("DeptId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_CreateEmployee", empNameParameter, empSalaryParameter, deptIdParameter);
+        }
     }
 }

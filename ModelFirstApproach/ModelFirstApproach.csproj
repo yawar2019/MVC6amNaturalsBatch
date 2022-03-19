@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{73143E8F-776C-4B20-95DE-7EB7B0F4E9B1}</ProjectGuid>
+    <ProjectGuid>{EDA3DDC2-1D9B-4AA4-93D8-DD60478A8436}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>databaseFirstApproach</RootNamespace>
-    <AssemblyName>databaseFirstApproach</AssemblyName>
+    <RootNamespace>ModelFirstApproach</RootNamespace>
+    <AssemblyName>ModelFirstApproach</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -137,10 +137,11 @@
       <LastGenOutput>EmployeeModel.Context.cs</LastGenOutput>
       <DependentUpon>EmployeeModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\EmployeeModel.edmx.sql" />
     <Content Include="Models\EmployeeModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EmployeeModel.edmx</DependentUpon>
       <LastGenOutput>EmployeeModel.cs</LastGenOutput>
+      <DependentUpon>EmployeeModel.edmx</DependentUpon>
     </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -162,15 +163,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\employeeDetailsController.cs" />
+    <Compile Include="Controllers\EmployeeinfoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Department.cs">
-      <DependentUpon>EmployeeModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Empdept.cs" />
-    <Compile Include="Models\employeeDetail.cs">
+    <Compile Include="Models\Employeeinfo.cs">
       <DependentUpon>EmployeeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EmployeeModel.Context.cs">
@@ -187,9 +184,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_employee_Result.cs">
-      <DependentUpon>EmployeeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -208,14 +202,12 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\employeeDetails\Create.cshtml" />
-    <Content Include="Views\employeeDetails\Delete.cshtml" />
-    <Content Include="Views\employeeDetails\Details.cshtml" />
-    <Content Include="Views\employeeDetails\Edit.cshtml" />
-    <Content Include="Views\employeeDetails\Index.cshtml" />
+    <Content Include="Views\Employeeinfoes\Create.cshtml" />
+    <Content Include="Views\Employeeinfoes\Delete.cshtml" />
+    <Content Include="Views\Employeeinfoes\Details.cshtml" />
+    <Content Include="Views\Employeeinfoes\Edit.cshtml" />
+    <Content Include="Views\Employeeinfoes\Index.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\employeeDetails\Index2.cshtml" />
-    <Content Include="Views\employeeDetails\Index3.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -242,9 +234,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>60291</DevelopmentServerPort>
+          <DevelopmentServerPort>57908</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60291/</IISUrl>
+          <IISUrl>http://localhost:57908/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
