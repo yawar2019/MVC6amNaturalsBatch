@@ -315,5 +315,14 @@ namespace MVC6amNaturalsBatch.Controllers
         {
             return RedirectToAction("index","new",new {id=2 });
         }
+
+        public ActionResult HtmlHelperExample()
+        {
+            StateEntities db = new Models.StateEntities();
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpName = "Shruti";
+            ViewBag.StateDet = new SelectList(db.States, "Id", "StateName",3);
+            return View(emp);
+        }
     }
 }

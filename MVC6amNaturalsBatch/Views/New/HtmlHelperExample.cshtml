@@ -1,0 +1,22 @@
+﻿@model MVC6amNaturalsBatch.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlHelperExample";
+}
+
+<h2>HtmlHelperExample</h2>
+
+<input type="text" name="name" value="john" style="background-color:blueviolet;color:white" class="form-control"/><br />
+@Html.TextBox("EmpName","tim",new {@style= "background-color:blueviolet;color:white" , @class="form-control"})<br />
+
+@Html.TextBoxFor(s=>s.EmpName, new { @style = "background-color:blueviolet;color:white", @class="form-control" })<br />
+
+@Html.Password("pwd",null,new {@id="txtpwd" })<br />
+
+@Html.DropDownList("Gender",new List<SelectListItem>() {
+
+new SelectListItem {Text="Male",Value="1"},
+new SelectListItem {Text="FeMale",Value="2",Selected=true}
+
+},"Select Gender")
+
+@Html.DropDownList("StateDet")
