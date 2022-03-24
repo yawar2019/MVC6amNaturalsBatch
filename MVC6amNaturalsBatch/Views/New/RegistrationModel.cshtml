@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "RegistrationModel";
+}
+
+<h2>RegistrationModel</h2>
+
+ @using (Html.BeginForm())
+ {
+    <label>Name</label>
+    @Html.TextBox("FName")<br />
+    <label>Password</label>
+    @Html.Password("Pwd")<br />
+    <label>gender</label>
+    @Html.RadioButton("Gender", "Male")    <span>Male</span>
+    @Html.RadioButton("Gender", "Female") <span>Female</span><br>
+    <label>state </label>
+    @Html.DropDownList("StateDet")
+    <br />
+    <label>Agreement</label>
+    @Html.CheckBox("Agreement", true)
+    <label>
+        Address
+    </label>
+
+            @Html.TextArea("Address")
+    <br />
+    <input type="submit" value="Save" />
+
+ }

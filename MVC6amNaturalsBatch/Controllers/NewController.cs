@@ -324,5 +324,24 @@ namespace MVC6amNaturalsBatch.Controllers
             ViewBag.StateDet = new SelectList(db.States, "Id", "StateName",3);
             return View(emp);
         }
+
+        public ActionResult RegistrationModel()
+        {
+            StateEntities db = new Models.StateEntities();
+
+            ViewBag.StateDet = new SelectList(db.States, "Id", "StateName", 3);
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RegistrationModel(Register reg)
+        {
+            StateEntities db = new Models.StateEntities();
+
+            ViewBag.StateDet = new SelectList(db.States, "Id", "StateName", 3);
+
+            return View();
+        }
     }
 }

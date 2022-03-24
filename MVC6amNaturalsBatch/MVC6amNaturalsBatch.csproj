@@ -168,6 +168,7 @@
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\EmpDept.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\Register.cs" />
     <Compile Include="Models\State.cs">
       <DependentUpon>StateModel.tt</DependentUpon>
     </Compile>
@@ -213,6 +214,7 @@
     <Content Include="Views\Shared\_GetAllEmployeesPartialView.cshtml" />
     <Content Include="Views\New\AccessEmployeeJsonData.cshtml" />
     <Content Include="Views\New\HtmlHelperExample.cshtml" />
+    <Content Include="Views\New\RegistrationModel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
