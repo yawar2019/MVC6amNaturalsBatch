@@ -1,12 +1,12 @@
-﻿
+﻿@model MVC6amNaturalsBatch.Models.Register
 @{
     ViewBag.Title = "RegistrationModel";
 }
 
 <h2>RegistrationModel</h2>
 
- @using (Html.BeginForm())
- {
+@using (Html.BeginForm())
+{
     <label>Name</label>
     @Html.TextBox("FName")<br />
     <label>Password</label>
@@ -15,7 +15,8 @@
     @Html.RadioButton("Gender", "Male")    <span>Male</span>
     @Html.RadioButton("Gender", "Female") <span>Female</span><br>
     <label>state </label>
-    @Html.DropDownList("StateDet")
+    @*@Html.DropDownList("StateDet1")*@
+    @Html.DropDownListFor(g => g.StateDet, (IEnumerable<SelectListItem>)ViewBag.StateDet,new {@onchange="fun()"})
     <br />
     <label>Agreement</label>
     @Html.CheckBox("Agreement", true)
@@ -23,8 +24,37 @@
         Address
     </label>
 
-            @Html.TextArea("Address")
+    @Html.TextArea("Address")
+    @Html.TextBoxFor(s=>s.FName)
     <br />
     <input type="submit" value="Save" />
 
- }
+}
+
+@if (Model != null)
+{
+    if (!string.IsNullOrEmpty(Model.FName))
+    {
+
+        @Model.FName
+    }
+}
+
+<script>
+    function fun()
+    {
+      
+        alert('hi' + $('#StateDet option:selected').val());
+
+        $.ajax({
+            url: "@Url.Action("getDropdowncity", "New")",
+            dataType: "Json",
+            type: "GET",
+            data:{StateId: $('#StateDet option:selected').val()},
+            success: function (result)
+            {
+                alert(result);
+            }
+        })
+    }
+</script>

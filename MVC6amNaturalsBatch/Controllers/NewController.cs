@@ -341,7 +341,21 @@ namespace MVC6amNaturalsBatch.Controllers
 
             ViewBag.StateDet = new SelectList(db.States, "Id", "StateName", 3);
 
-            return View();
+            return View(reg);
+        }
+
+        public JsonResult getDropdowncity(int? StateId)
+        {
+            string City = string.Empty;
+            if (StateId == 1) {
+                City = "abc City";
+            }
+            else
+            {
+                City = "xyz city";
+            }
+
+            return Json(City,JsonRequestBehavior.AllowGet);
         }
     }
 }
