@@ -357,5 +357,28 @@ namespace MVC6amNaturalsBatch.Controllers
 
             return Json(City,JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult UserDefinedControl()
+        {
+            return View();
+        }
+
+        public ActionResult ValidationExample()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ValidationExample(RegistrationForm reg)
+        {
+            if(ModelState.IsValid)
+            {
+                return RedirectToAction("UserDefinedControl");
+            }
+            else
+            {
+                return View(reg);
+            }
+        }
     }
 }

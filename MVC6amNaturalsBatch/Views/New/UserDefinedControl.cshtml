@@ -1,0 +1,21 @@
+﻿@using MVC6amNaturalsBatch.Models
+@{
+    ViewBag.Title = "UserDefinedControl";
+}
+
+<h2>UserDefinedControl</h2>
+
+@myhtmlhelper.MyLabel("I accept the Agreement")
+
+@Html.createUrControl("text")
+@Html.createUrControl("radio")
+@Html.createUrControl("checkbox")
+@Html.TextBox("file")
+
+
+
+@helper labelbyrazzorcode(string content)
+{
+    <label>@content</label>
+}
+@labelbyrazzorcode("hi this is ali")
