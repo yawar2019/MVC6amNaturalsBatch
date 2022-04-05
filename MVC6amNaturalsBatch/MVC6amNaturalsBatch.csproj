@@ -167,6 +167,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\NewController.cs" />
+    <Compile Include="Filter\CustomFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,6 +225,7 @@
     <Content Include="Views\New\RegistrationModel.cshtml" />
     <Content Include="Views\New\UserDefinedControl.cshtml" />
     <Content Include="Views\New\ValidationExample.cshtml" />
+    <Content Include="Views\New\TestFilter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

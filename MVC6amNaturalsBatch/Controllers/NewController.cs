@@ -1,4 +1,5 @@
-﻿using MVC6amNaturalsBatch.Models;
+﻿using MVC6amNaturalsBatch.Filter;
+using MVC6amNaturalsBatch.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace MVC6amNaturalsBatch.Controllers
 {
+
     public class NewController : Controller
     {
         // GET: New
@@ -357,14 +359,15 @@ namespace MVC6amNaturalsBatch.Controllers
 
             return Json(City,JsonRequestBehavior.AllowGet);
         }
+        [CustomFilter]
 
         public ActionResult UserDefinedControl()
         {
             return View();
         }
-
         public ActionResult ValidationExample()
         {
+      
             return View();
         }
 
@@ -379,6 +382,14 @@ namespace MVC6amNaturalsBatch.Controllers
             {
                 return View(reg);
             }
+        }
+
+        [CustomFilter]
+        public ActionResult TestFilter()
+        {
+            ViewBag.WinIPL="RCB";
+
+            return View();
         }
     }
 }
