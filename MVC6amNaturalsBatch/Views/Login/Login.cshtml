@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+
+
+<form action="~/login/login" method="post">
+    <label>UserName</label>
+    <input type="text" name="UserName" value="" class="form-control" />
+    <label>Password</label>
+    <input type="password" name="Password" value=""  class="form-control" />
+    <input type="submit"  value="Login" />
+</form>
+
+@if (ViewBag.info != null)
+{
+    <span style="color:red;"> @ViewBag.info </span>
+}

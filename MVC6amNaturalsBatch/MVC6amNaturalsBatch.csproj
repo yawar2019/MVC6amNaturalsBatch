@@ -166,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NewController.cs" />
     <Compile Include="Filter\CustomFilter.cs" />
     <Compile Include="Global.asax.cs">
@@ -177,6 +178,9 @@
     <Compile Include="Models\myhtmlhelper.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\RegistrationForm.cs" />
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>StateModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\State.cs">
       <DependentUpon>StateModel.tt</DependentUpon>
     </Compile>
@@ -194,6 +198,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StateModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserDetail.cs">
+      <DependentUpon>StateModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserRoleMapping.cs">
+      <DependentUpon>StateModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -226,6 +236,8 @@
     <Content Include="Views\New\UserDefinedControl.cshtml" />
     <Content Include="Views\New\ValidationExample.cshtml" />
     <Content Include="Views\New\TestFilter.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Dashboard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

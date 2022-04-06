@@ -26,5 +26,8 @@ namespace MVC6amNaturalsBatch.Models
         }
     
         public virtual DbSet<State> States { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<UserDetail> UserDetails { get; set; }
+        public virtual DbSet<UserRoleMapping> UserRoleMappings { get; set; }
     }
 }
