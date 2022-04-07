@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelFirstApproach", "Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperExample", "DapperExample\DapperExample.csproj", "{188F1A41-FAF6-4621-96BA-A59F60B5622A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandleErrorAttributeExample", "HandleErrorAttributeExample\HandleErrorAttributeExample.csproj", "{2C59B18A-1709-4CA2-A7D5-0101495AA247}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{188F1A41-FAF6-4621-96BA-A59F60B5622A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{188F1A41-FAF6-4621-96BA-A59F60B5622A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{188F1A41-FAF6-4621-96BA-A59F60B5622A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C59B18A-1709-4CA2-A7D5-0101495AA247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C59B18A-1709-4CA2-A7D5-0101495AA247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C59B18A-1709-4CA2-A7D5-0101495AA247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C59B18A-1709-4CA2-A7D5-0101495AA247}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

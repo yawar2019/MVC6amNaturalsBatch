@@ -169,6 +169,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NewController.cs" />
     <Compile Include="Filter\CustomFilter.cs" />
+    <Compile Include="Filter\CustomRoleProvider.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,6 +239,8 @@
     <Content Include="Views\New\TestFilter.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Dashboard.cshtml" />
+    <Content Include="Views\Login\AboutUs.cshtml" />
+    <Content Include="Views\Login\ContactUs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
