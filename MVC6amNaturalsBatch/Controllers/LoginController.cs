@@ -52,5 +52,13 @@ namespace MVC6amNaturalsBatch.Controllers
             FormsAuthentication.SignOut();
             return Redirect("~/Login/Login");
         }
+
+        public ActionResult ServiceTest()
+        {
+            ServiceReference1.MyServiceSoapClient obj = new ServiceReference1.MyServiceSoapClient();
+         var result=  obj.Add(12, 21);
+            return Content(result.ToString());
+
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace HandleErrorAttributeExample.Controllers
 
             return View();
         }
-        [HandleError]
+        //[HandleError(View ="_Error1")]
         public ActionResult TestValue(string b)
         {
             try
@@ -41,6 +41,12 @@ namespace HandleErrorAttributeExample.Controllers
             }
             return View();
 
+        }
+
+        [OutputCache(Duration =20)]
+        public ActionResult TestOutPutCache()
+        {
+            return View();
         }
     }
 }
