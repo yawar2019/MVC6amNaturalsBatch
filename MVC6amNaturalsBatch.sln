@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC6amNaturalsBatch", "MVC6amNaturalsBatch\MVC6amNaturalsBatch.csproj", "{BB9DBF58-6280-44AF-8B0D-3B33B387AC86}"
+	ProjectSection(ProjectDependencies) = postProject
+		{67A4271B-90B7-439C-BF14-1B6417C61B53} = {67A4271B-90B7-439C-BF14-1B6417C61B53}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoDotnet", "AdoDotnet\AdoDotnet.csproj", "{EEB55D1E-EE70-4DEC-BEF1-564AB82C19AF}"
 EndProject
@@ -16,6 +19,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperExample", "DapperExample\DapperExample.csproj", "{188F1A41-FAF6-4621-96BA-A59F60B5622A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandleErrorAttributeExample", "HandleErrorAttributeExample\HandleErrorAttributeExample.csproj", "{2C59B18A-1709-4CA2-A7D5-0101495AA247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService1", "WcfService1\WcfService1.csproj", "{67A4271B-90B7-439C-BF14-1B6417C61B53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +56,10 @@ Global
 		{2C59B18A-1709-4CA2-A7D5-0101495AA247}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C59B18A-1709-4CA2-A7D5-0101495AA247}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C59B18A-1709-4CA2-A7D5-0101495AA247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67A4271B-90B7-439C-BF14-1B6417C61B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67A4271B-90B7-439C-BF14-1B6417C61B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67A4271B-90B7-439C-BF14-1B6417C61B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67A4271B-90B7-439C-BF14-1B6417C61B53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

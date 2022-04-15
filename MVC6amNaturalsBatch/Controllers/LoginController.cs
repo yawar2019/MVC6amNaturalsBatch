@@ -55,9 +55,13 @@ namespace MVC6amNaturalsBatch.Controllers
 
         public ActionResult ServiceTest()
         {
-            ServiceReference1.MyServiceSoapClient obj = new ServiceReference1.MyServiceSoapClient();
-         var result=  obj.Add(12, 21);
-            return Content(result.ToString());
+         //   ServiceReference1.MyServiceSoapClient obj = new ServiceReference1.MyServiceSoapClient();
+         //var result=  obj.Add(12, 21);
+         //   ServiceReference2.Service1Client obj1 = new ServiceReference2.Service1Client();
+         //  var result1= obj1.Add(12,43);
+            ServiceReference3.Service1Client obj3 = new ServiceReference3.Service1Client("NetTcpBinding_IService1");
+            var result5 = obj3.Add(56, 49);
+            return Content(result5.ToString());
 
         }
     }
