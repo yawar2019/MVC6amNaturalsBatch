@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "ShowEmployes";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<h2>ShowEmployes</h2>
+
+<table id="example">
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Salary</th>
+    </tr>
+</table>
+
+
+<form>
+    <label>EmpName</label>
+    <input type="text" id="EmpName" value="" /><br />
+    <label>EmpSalary</label>
+    <input type="text" id="EmpSalary" value="" /><br />
+
+    <button type="button" class="btn btn-success" onclick="fun()" />
+</form>
+
+
+<script>
+
+    $.ajax({
+
+        url: "http://localhost:53176/api/employeeDetailsApi/GetemployeeDetails",
+        datatype: "json",
+        type: "GET",
+        success: function (result)
+
+        {
+            alert(result);
+            $.each(result,function(i,key){
+                $('#example tr:last').after("<tr><td>" + key.EmpId + "</td><td>" + key.EmpName + "</td><td>" + key.EmpSalary + "</td></tr>")
+            
+            })
+
+
+        }
+
+
+
+    })
+    function fun() {
+
+         
+
+        $.post("http://localhost:53176/api/employeeDetailsApi/PostemployeeDetail", {
+            EmpName: $("#EmpName").val(),
+            EmpSalary: $("#EmpSalary").val(),
+
+
+        }, function (result) { alert("Inserted Successfully") })
+    }
+</script>

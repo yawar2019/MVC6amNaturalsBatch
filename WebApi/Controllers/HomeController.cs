@@ -14,5 +14,12 @@ namespace WebApi.Controllers
 
             return View();
         }
+
+        public ActionResult ShowEmployes()
+        {
+           
+
+            return View();
+        }
     }
 }
